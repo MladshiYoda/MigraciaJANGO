@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}О компании - Аэропорт Керимов{% endblock %}
+{% block content %}
+    <h1>О международном аэропорте Керимов</h1>
+    
+    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <p style="font-size: 1.1rem;">Наш аэропорт был открыт в 2010 году и на сегодняшний день является одним из самых динамично развивающихся авиационных хабов региона.</p>
+            <p style="font-size: 1.1rem;">Ежегодно мы обслуживаем более 5 миллионов пассажиров и предлагаем рейсы в десятки городов России и зарубежья.</p>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+            <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Аэропорт" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="card">
+            <h3>Наша миссия</h3>
+            <p>Обеспечивать пассажирам максимальный уровень комфорта и безопасности на всех этапах путешествия.</p>
+        </div>
+        <div class="card">
+            <h3>Наши цифры</h3>
+            <p>2 взлетно-посадочные полосы, 3 терминала, более 100 авиакомпаний-партнеров.</p>
+        </div>
+    </div>
+{% endblock %}

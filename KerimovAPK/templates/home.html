@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Главная - Аэропорт Керимов{% endblock %}
+{% block content %}
+
+    <div class="hero">
+        <h1>Добро пожаловать в Аэропорт Керимов</h1>
+        <p>Ваш комфортный старт для любого путешествия. Мы работаем 24/7, чтобы сделать ваш полет безопасным и приятным.</p>
+    </div>
+
+    <h2>Ближайшие вылеты</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Рейс</th>
+                    <th>Направление</th>
+                    <th>Время</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SU-1234</td>
+                    <td>Москва (Шереметьево)</td>
+                    <td>14:30</td>
+                    <td class="status-boarding">Посадка</td>
+                </tr>
+                <tr>
+                    <td>U6-345</td>
+                    <td>Санкт-Петербург</td>
+                    <td>15:00</td>
+                    <td class="status-ontime">По расписанию</td>
+                </tr>
+                <tr>
+                    <td>S7-890</td>
+                    <td>Новосибирск</td>
+                    <td>15:45</td>
+                    <td class="status-delayed">Задержан (до 16:30)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid-container" style="margin-top: 40px;">
+        <div class="card">
+            <h3>🛫 Комфорт</h3>
+            <p>Просторные залы ожидания, VIP-зоны и бесплатный Wi-Fi на всей территории аэропорта.</p>
+        </div>
+        <div class="card">
+            <h3>🛡 Безопасность</h3>
+            <p>Современная система досмотра и охраны, обеспечивающая вашу безопасность.</p>
+        </div>
+        <div class="card">
+            <h3>🛍 Шоппинг и еда</h3>
+            <p>Более 50 магазинов Duty Free и уютные кафе с разнообразным меню.</p>
+        </div>
+    </div>
+
+{% endblock %}
