@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Рейс {{ flight.flight_number }}{% endblock %}
+
+{% block content %}
+<h1>Рейс {{ flight.flight_number }}</h1>
+
+<div class="card" style="max-width: 600px;">
+    <p><strong>Откуда:</strong> {{ flight.departure.name }} ({{ flight.departure.city }})</p>
+    <p><strong>Куда:</strong> {{ flight.arrival.name }} ({{ flight.arrival.city }})</p>
+    <p><strong>Самолёт:</strong> {{ flight.aircraft.model_name }}</p>
+    <p><strong>Время вылета:</strong> {{ flight.departure_time }}</p>
+    <br>
+    <a href="{% url 'flight_update' flight.pk %}" class="btn" style="background:#fd7e14;">Редактировать</a>
+    <a href="{% url 'flight_delete' flight.pk %}" class="btn" style="background:#dc3545;">Удалить</a>
+    <a href="{% url 'flight_list' %}" class="btn">Назад к списку</a>
+</div>
+{% endblock %}

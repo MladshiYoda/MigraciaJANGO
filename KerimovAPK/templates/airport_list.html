@@ -1,0 +1,11 @@
+<h1>Авиакомпании</h1>
+<a href="{% url 'airline_create' %}">Добавить авиакомпанию</a>
+<ul>
+    {% for obj in object_list %}
+        <li>
+            <a href="{% url 'airline_detail' obj.pk %}">{{ obj.name }}</a>
+            [<a href="{% url 'airline_update' obj.pk %}">Ред.</a>]
+            [<a href="{% url 'airline_delete' obj.pk %}">Удал.</a>]
+        </li>
+    {% endfor %}
+</ul>

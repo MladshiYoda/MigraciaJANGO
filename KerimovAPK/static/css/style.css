@@ -1,6 +1,4 @@
-/* =========================================
-   Базовые настройки и шрифты
-   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -30,9 +28,7 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* =========================================
-   Шапка сайта (Хедер) и Меню
-   ========================================= */
+
 header {
     background: linear-gradient(135deg, #003366 0%, #0056b3 100%);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -112,9 +108,7 @@ header {
     display: block;
 }
 
-/* =========================================
-   Баннер (Hero) для главной страницы
-   ========================================= */
+
 .hero {
     background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), 
                 url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
@@ -140,9 +134,7 @@ header {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* =========================================
-   Таблицы (Табло рейсов)
-   ========================================= */
+
 .table-container {
     background: #fff;
     padding: 20px;
@@ -181,9 +173,7 @@ tr:hover {
 .status-delayed { color: #dc3545; font-weight: bold; }
 .status-boarding { color: #fd7e14; font-weight: bold; }
 
-/* =========================================
-   Сетка карточек (Услуги, О нас, Контакты)
-   ========================================= */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -211,9 +201,7 @@ tr:hover {
     font-size: 1.3rem;
 }
 
-/* =========================================
-   Кнопки
-   ========================================= */
+
 .btn {
     display: inline-block;
     background: #0056b3;

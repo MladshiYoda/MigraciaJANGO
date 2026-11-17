@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Билеты{% endblock %}
+
+{% block content %}
+<h1>Билеты</h1>
+<a href="{% url 'ticket_create' %}" class="btn">+ Добавить билет</a>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Рейс</th>
+                <th>Пассажир</th>
+                <th>Место</th>
+                <th>Цена</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in object_list %}
+                <tr>
+                    <td><strong>{{ obj.flight.flight_number }}</strong></td>
+                    <td>{{ obj.passenger.first_name }} {{ obj.passenger.last_name }}</td>
+                    <td>{{ obj.seat }}</td>
+                    <td>{{ obj.price }} ₽</td>
+                    <td>
+                        <a href="{% url 'ticket_detail' obj.pk %}" class="btn" style="padding: 5px 10px; margin: 0;">Детали</a>
+                        <a href="{% url 'ticket_update' obj.pk %}" class="btn" style="padding: 5px 10px; margin: 0; background:#fd7e14;">Ред.</a>
+                        <a href="{% url 'ticket_delete' obj.pk %}" class="btn" style="padding: 5px 10px; margin: 0; background:#dc3545;">Удал.</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="5">Пусто.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

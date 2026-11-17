@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ passenger.first_name }} {{ passenger.last_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ passenger.first_name }} {{ passenger.last_name }}</h1>
+
+<div class="card" style="max-width: 600px;">
+    <p><strong>Паспорт:</strong> {{ passenger.passport }}</p>
+    <br>
+    <a href="{% url 'passenger_update' passenger.pk %}" class="btn" style="background:#fd7e14;">Редактировать</a>
+    <a href="{% url 'passenger_delete' passenger.pk %}" class="btn" style="background:#dc3545;">Удалить</a>
+    <a href="{% url 'passenger_list' %}" class="btn">Назад к списку</a>
+</div>
+{% endblock %}

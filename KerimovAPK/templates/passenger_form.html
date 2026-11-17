@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Форма пассажира{% endblock %}
+
+{% block content %}
+<h1>Форма пассажира</h1>
+
+<div class="table-container" style="max-width: 600px;">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Сохранить</button>
+        <a href="{% url 'passenger_list' %}" class="btn" style="background:#666;">Отмена</a>
+    </form>
+</div>
+{% endblock %}

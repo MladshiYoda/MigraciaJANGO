@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block title %}{{ entity_title }}{% endblock %}{% block content %}
+<div class="page-head"><div><div class="eyebrow">СПРАВОЧНИКИ И ОПЕРАЦИИ</div><h1>{{ entity_title }}</h1><p class="muted">Просмотр записей и управление данными.</p></div><a class="btn" href="{% url entity_key|add:'_create' %}">+ Добавить запись</a></div>
+{% include 'crud_nav.html' %}
+<div class="table-container"><table><thead><tr><th>ID</th><th>Запись</th><th>Фото</th><th>Действия</th></tr></thead><tbody>
+{% for obj in object_list %}<tr><td class="muted">#{{ obj.pk }}</td><td><strong>{{ obj }}</strong></td><td>{% if obj.logo %}<img class="thumb" src="{{ obj.logo.url }}" alt="Логотип">{% elif obj.photo %}<img class="thumb" src="{{ obj.photo.url }}" alt="Фото">{% else %}<span class="muted">—</span>{% endif %}</td><td class="actions"><a class="small-btn" href="{% url entity_key|add:'_detail' obj.pk %}">Подробнее</a><a class="small-btn" href="{% url entity_key|add:'_update' obj.pk %}">Изменить</a><a class="small-btn danger-text" href="{% url entity_key|add:'_delete' obj.pk %}">Удалить</a></td></tr>{% empty %}<tr><td colspan="4">Пока нет записей. Нажмите «Добавить запись».</td></tr>{% endfor %}
+</tbody></table></div>{% endblock %}

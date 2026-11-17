@@ -3,38 +3,33 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Аэропорт Керимов{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Аэропорт{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+
+    <!-- Шапка с навигацией -->
     <header>
         <nav class="navbar">
-            <a href="{% url 'home' %}" class="logo">✈ Аэропорт Керимов</a>
+            <a href="{% url 'airline_list' %}" class="logo">
+                ✈️ Аэропорт
+            </a>
             <ul class="nav-links">
-                <li><a href="{% url 'home' %}">Главная</a></li>
-                
-                <li class="dropdown">
-                    <a href="{% url 'about' %}" class="dropbtn">Информация ▾</a>
-                    <div class="dropdown-content">
-                        <a href="{% url 'about' %}">О компании</a>
-                        <a href="{% url 'contacts' %}">Контакты</a>
-                        <a href="{% url 'how_to_find' %}">Как нас найти</a>
-                    </div>
-                </li>
-
-                <li><a href="{% url 'page1' %}">Услуги</a></li>
-                <li><a href="{% url 'page2' %}">Табло рейсов</a></li>
+                <li><a href="{% url 'airline_list' %}">Авиакомпании</a></li>
+                <li><a href="{% url 'airport_list' %}">Аэропорты</a></li>
+                <li><a href="{% url 'flight_list' %}">Рейсы</a></li>
+                <li><a href="{% url 'passenger_list' %}">Пассажиры</a></li>
+                <li><a href="{% url 'ticket_list' %}">Билеты</a></li>
+                <li><a href="/admin/">Админка</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="content">
+    <!-- Основной контент -->
+    <main>
         {% block content %}{% endblock %}
     </main>
 
-    <footer style="text-align: center; padding: 20px; background: #1e3c72; color: white; margin-top: 50px;">
-        <p>&copy; 2026 Аэропорт Керимов. Все права защищены.</p>
-        <p>Служба поддержки: +7 (800) 555-35-35</p>
-    </footer>
 </body>
 </html>

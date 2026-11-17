@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ airline.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ airline.name }}</h1>
+
+<div class="card" style="max-width: 600px;">
+    {% if airline.logo %}
+        <img src="{{ airline.logo.url }}" alt="{{ airline.name }}" style="width: 300px; border-radius: 8px;">
+    {% else %}
+        <p>Логотипа нет</p>
+    {% endif %}
+    <br><br>
+    <a href="{% url 'airline_update' airline.pk %}" class="btn" style="background:#fd7e14;">Редактировать</a>
+    <a href="{% url 'airline_delete' airline.pk %}" class="btn" style="background:#dc3545;">Удалить</a>
+    <a href="{% url 'airline_list' %}" class="btn">Назад к списку</a>
+</div>
+{% endblock %}

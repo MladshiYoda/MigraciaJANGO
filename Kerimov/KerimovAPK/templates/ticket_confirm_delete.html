@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Удалить билет{% endblock %}
+
+{% block content %}
+<h1>Удалить билет "{{ object.seat }}"?</h1>
+
+<div class="table-container" style="max-width: 600px;">
+    <p>Вы уверены?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn" style="background:#dc3545;">Да, удалить</button>
+        <a href="{% url 'ticket_list' %}" class="btn" style="background:#666;">Отмена</a>
+    </form>
+</div>
+{% endblock %}
